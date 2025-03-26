@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y wget
 
 RUN wget -O tinyllama-1.1b-chat-v1.0.Q8_0.gguf "https://github.com/wuongg/chat_bot_qa/releases/download/v1.0.0/tinyllama-1.1b-chat-v1.0.Q8_0.gguf"
 
-RUN rm tinyllama-1.1b-chat-v1.0.Q8_0.gguf
 
 # Mở cổng 8501 (mặc định của Streamlit)
 EXPOSE 8501
