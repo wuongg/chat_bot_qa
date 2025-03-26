@@ -1,6 +1,14 @@
 from llama_cpp import Llama
 import os
 
+# Định nghĩa đường dẫn mô hình (từ Dockerfile)
+MODEL_PATH = "/app/tinyllama-1.1b-chat-v1.0.Q8_0.gguf"
+
+# Kiểm tra xem file mô hình có tồn tại không
+if not os.path.exists(MODEL_PATH):
+    raise FileNotFoundError(f"Không tìm thấy mô hình tại {MODEL_PATH}. Kiểm tra lại Dockerfile!")
+
+
 n_threads = os.cpu_count()
 GPU_LAYERS = 40
 
